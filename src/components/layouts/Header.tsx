@@ -25,6 +25,7 @@ export default function Header() {
   const [scrollY, setScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +75,7 @@ export default function Header() {
   // 텍스트 색상 결정
   const getTextColor = (isLogo = false) => {
     if (scrollY > 50) {
-      return isLogo ? 'text-gray-900' : 'text-gray-700';
+      return isLogo ? 'text-gray-900' : 'text-gray-800';
     }
     return 'text-white';
   };
@@ -85,7 +86,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-[67.250px]">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className={`text-3xl font-bold tracking-tight transition-colors ${getTextColor(true)}`}>
+            <a href="/" className={`text-3xl font-bold tracking-tight transition-colors ${getTextColor(true)}`} aria-label="Jamong 홈페이지로 이동">
               Jamong
             </a>
           </div>
@@ -100,6 +101,7 @@ export default function Header() {
                     "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
+                  aria-label="홈 섹션으로 이동"
                 >
                   홈
                 </NavigationMenuLink>
@@ -111,6 +113,7 @@ export default function Header() {
                     "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
+                  aria-label="소개 섹션으로 이동"
                 >
                   소개
                 </NavigationMenuLink>
@@ -122,6 +125,7 @@ export default function Header() {
                     "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
+                  aria-label="서비스 섹션으로 이동"
                 >
                   서비스
                 </NavigationMenuLink>
@@ -133,6 +137,7 @@ export default function Header() {
                     "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
+                  aria-label="문의하기 섹션으로 이동"
                 >
                   문의하기
                 </NavigationMenuLink>
@@ -143,7 +148,9 @@ export default function Header() {
           {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <button 
-              className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-base font-medium rounded-md transition-colors"
+              type="button"
+              className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 text-base font-medium rounded-md transition-colors"
+              aria-label="문의하기 버튼"
             >
               문의하기
             </button>
@@ -151,12 +158,16 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <Sheet>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button 
+                  type="button"
                   className={`hover:text-orange-500 p-2 transition-colors ${getTextColor()}`}
+                  aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
+                  aria-expanded={isMobileMenuOpen}
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 </button>
@@ -170,21 +181,23 @@ export default function Header() {
                     </SheetDescription>
                   </SheetHeader>
                   <div className="space-y-6">
-                    <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50">
+                    <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
                       홈
                     </a>
-                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50">
+                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
                       소개
                     </a>
-                    <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50">
+                    <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="서비스 섹션으로 이동">
                       서비스
                     </a>
-                    <a href="#contact" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50">
+                    <a href="#contact" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="문의하기 섹션으로 이동">
                       문의하기
                     </a>
                     <div className="pt-8">
                       <button 
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 text-base font-medium rounded-md transition-colors"
+                        type="button"
+                        className="w-full bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 text-base font-medium rounded-md transition-colors"
+                        aria-label="문의하기 버튼"
                       >
                         문의하기
                       </button>

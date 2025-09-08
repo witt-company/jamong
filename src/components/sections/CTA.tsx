@@ -5,15 +5,23 @@ export default function CTA() {
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           지금 시작하세요
         </h2>
-        <p className="text-xl text-orange-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed">
           무료 상담을 통해 맞춤형 솔루션을 확인해보세요.<br />
           전문가가 직접 상담해드립니다.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-white text-orange-500 px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+          <button 
+            type="button"
+            className="bg-white text-orange-700 px-8 py-4 rounded-lg text-lg font-medium hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl"
+            aria-label="무료 상담 신청하기"
+          >
             무료 상담 신청하기
           </button>
-          <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white hover:text-orange-500 transition-all duration-200">
+          <button 
+            type="button"
+            className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-white hover:text-orange-700 transition-all duration-200"
+            aria-label="서비스 문의하기"
+          >
             서비스 문의하기
           </button>
         </div>

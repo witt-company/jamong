@@ -8,7 +8,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Hero />
       
-      <main>
+      <main role="main">
         <Features />
         <CTA />
       </main>

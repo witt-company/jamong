@@ -8,10 +8,11 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Man with laptop on concrete wall"
+          alt=""
           fill
           className="object-cover grayscale object-right"
           priority
+          aria-hidden="true"
         />
         {/* Light overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20"></div>
@@ -29,15 +30,23 @@ export default function Hero() {
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                 <span className="block">혁신적인 기술로</span>
-                <span className="block text-orange-400">비즈니스를 성장</span>
+                <span className="block text-orange-500">비즈니스를 성장</span>
               </h1>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button className="bg-orange-500 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl">
+                <button 
+                  type="button"
+                  className="bg-orange-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-orange-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+                  aria-label="무료 상담 신청하기"
+                >
                   무료 상담 신청
                 </button>
-                <button className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-200">
+                <button 
+                  type="button"
+                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-200"
+                  aria-label="서비스 자세히 알아보기"
+                >
                   서비스 알아보기
                 </button>
               </div>
