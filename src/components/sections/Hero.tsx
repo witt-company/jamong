@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Header from '@/components/layouts/Header';
+import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
@@ -30,25 +31,27 @@ export default function Hero() {
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                 <span className="block">혁신적인 기술로</span>
-                <span className="block text-orange-500">비즈니스를 성장</span>
+                <span className="block text-primary">비즈니스를 성장</span>
               </h1>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <button 
-                  type="button"
-                  className="bg-orange-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-orange-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+                <Button 
+                  size="lg"
+                  className="h-12 sm:h-14 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl"
+                  style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}}
                   aria-label="무료 상담 신청하기"
                 >
                   무료 상담 신청
-                </button>
-                <button 
-                  type="button"
-                  className="border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white hover:text-gray-900 transition-all duration-200"
+                </Button>
+                <Button 
+                  variant="outline"
+                  size="lg"
+                  className="h-12 sm:h-14 border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium hover:bg-white hover:text-gray-900 bg-transparent"
                   aria-label="서비스 자세히 알아보기"
                 >
                   서비스 알아보기
-                </button>
+                </Button>
               </div>
             </div>
 

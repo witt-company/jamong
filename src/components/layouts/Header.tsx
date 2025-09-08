@@ -98,7 +98,7 @@ export default function Header() {
                 <NavigationMenuLink 
                   href="#home"
                   className={cn(
-                    "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
+                    "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
                   aria-label="홈 섹션으로 이동"
@@ -110,7 +110,7 @@ export default function Header() {
                 <NavigationMenuLink 
                   href="#about"
                   className={cn(
-                    "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
+                    "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
                   aria-label="소개 섹션으로 이동"
@@ -122,7 +122,7 @@ export default function Header() {
                 <NavigationMenuLink 
                   href="#services"
                   className={cn(
-                    "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
+                    "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
                   aria-label="서비스 섹션으로 이동"
@@ -134,7 +134,7 @@ export default function Header() {
                 <NavigationMenuLink 
                   href="#contact"
                   className={cn(
-                    "px-4 py-2 text-base font-medium transition-colors hover:text-orange-500 hover:bg-transparent focus:bg-transparent",
+                    "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
                   aria-label="문의하기 섹션으로 이동"
@@ -147,13 +147,9 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button 
-              type="button"
-              className="bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 text-base font-medium rounded-md transition-colors"
-              aria-label="문의하기 버튼"
-            >
+            <Button size="lg" className="px-4 py-2 text-base text-shadow-sm" style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}} aria-label="문의하기 버튼">
               문의하기
-            </button>
+            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -162,7 +158,7 @@ export default function Header() {
               <SheetTrigger asChild>
                 <button 
                   type="button"
-                  className={`hover:text-orange-500 p-2 transition-colors ${getTextColor()}`}
+                  className={`hover:text-primary p-2 transition-colors ${getTextColor()}`}
                   aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
                   aria-expanded={isMobileMenuOpen}
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -172,7 +168,7 @@ export default function Header() {
                   </svg>
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] z-[200]">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] z-[200] bg-white">
                 <div className="px-6 py-6">
                   <SheetHeader className="pb-8">
                     <SheetTitle className="text-left text-3xl font-bold text-gray-900">Jamong</SheetTitle>
@@ -181,26 +177,22 @@ export default function Header() {
                     </SheetDescription>
                   </SheetHeader>
                   <div className="space-y-6">
-                    <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
+                    <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
                       홈
                     </a>
-                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
+                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
                       소개
                     </a>
-                    <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="서비스 섹션으로 이동">
+                    <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="서비스 섹션으로 이동">
                       서비스
                     </a>
-                    <a href="#contact" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-orange-500 transition-colors rounded-lg hover:bg-gray-50" aria-label="문의하기 섹션으로 이동">
+                    <a href="#contact" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="문의하기 섹션으로 이동">
                       문의하기
                     </a>
                     <div className="pt-8">
-                      <button 
-                        type="button"
-                        className="w-full bg-orange-700 hover:bg-orange-800 text-white px-4 py-2 text-base font-medium rounded-md transition-colors"
-                        aria-label="문의하기 버튼"
-                      >
+                      <Button className="w-full" style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}} aria-label="문의하기 버튼">
                         문의하기
-                      </button>
+                      </Button>
                     </div>
                   </div>
                 </div>
