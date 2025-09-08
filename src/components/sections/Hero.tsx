@@ -11,7 +11,7 @@ export default function Hero() {
           src="https://images.unsplash.com/photo-1483389127117-b6a2102724ae?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
           fill
-          className="object-cover grayscale object-right"
+          className="object-cover grayscale object-center lg:object-right"
           priority
           aria-hidden="true"
         />

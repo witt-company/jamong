@@ -166,15 +166,13 @@ export default function Header() {
                   </svg>
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px] z-[200] bg-white">
-                <div className="px-6 py-6">
-                  <SheetHeader className="pb-8">
-                    <SheetTitle className="text-left text-3xl font-bold text-gray-900">Jamong</SheetTitle>
-                    <SheetDescription className="text-left text-gray-600 text-base">
-                      혁신적인 솔루션으로 비즈니스를 성장시키세요
-                    </SheetDescription>
-                  </SheetHeader>
-                  <div className="space-y-6">
+              <SheetContent side="right" className="w-[280px] z-[200] bg-white">
+                <div className="px-4 py-4">
+                  <div className="sr-only">
+                    <SheetTitle>메뉴</SheetTitle>
+                    <SheetDescription>네비게이션 메뉴</SheetDescription>
+                  </div>
+                  <div className="space-y-4">
                     <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
                       홈
                     </a>
@@ -187,7 +185,7 @@ export default function Header() {
                     <a href="#contact" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="문의하기 섹션으로 이동">
                       문의하기
                     </a>
-                    <div className="pt-8">
+                    <div className="pt-4">
                       <Button className="w-full" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼">
                         문의하기
                       </Button>
