@@ -1,15 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import {
   Sheet,
@@ -31,16 +29,16 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrollY(currentScrollY);
-      
+
       // 히어로 섹션 높이 (100dvh)를 기준으로 헤더 숨김
       const heroHeight = window.innerHeight;
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > heroHeight * 0.8) {
         setScrollDirection('down');
       } else {
         setScrollDirection('up');
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -51,24 +49,24 @@ export default function Header() {
   // 헤더 스타일 결정
   const getHeaderClasses = () => {
     let baseClasses = "fixed top-0 left-0 right-0 z-[100] transition-all duration-300";
-    
+
     // 히어로 섹션의 80% 지점에서 아래로 스크롤 중일 때는 헤더 숨김
     const heroHeight = typeof window !== 'undefined' ? window.innerHeight : 0;
     const hideThreshold = heroHeight * 0.8;
-    
+
     if (scrollY > hideThreshold && scrollDirection === 'down') {
       baseClasses += " -translate-y-full";
     } else {
       baseClasses += " translate-y-0";
     }
-    
+
     // 스크롤이 50px 이상일 때만 배경 표시 (언더라인 제거)
     if (scrollY > 50) {
       baseClasses += " bg-white/95 backdrop-blur-sm shadow-sm";
     } else {
       baseClasses += " bg-transparent";
     }
-    
+
     return baseClasses;
   };
 
@@ -86,16 +84,16 @@ export default function Header() {
         <div className="flex items-center justify-between h-[67.250px]">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className={`text-3xl font-bold tracking-tight transition-colors ${getTextColor(true)}`} aria-label="Jamong 홈페이지로 이동">
+            <Link href="/" className={`text-3xl font-bold tracking-tight transition-colors ${getTextColor(true)}`} aria-label="Jamong 홈페이지로 이동">
               Jamong
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="space-x-8">
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   href="#home"
                   className={cn(
                     "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
@@ -107,7 +105,7 @@ export default function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   href="#about"
                   className={cn(
                     "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
@@ -119,7 +117,7 @@ export default function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   href="#services"
                   className={cn(
                     "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
@@ -131,7 +129,7 @@ export default function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   href="#contact"
                   className={cn(
                     "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
@@ -147,7 +145,7 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button size="lg" className="px-4 py-2 text-base text-shadow-sm" style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}} aria-label="문의하기 버튼">
+            <Button size="lg" className="px-4 py-2 text-base text-shadow-sm" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼">
               문의하기
             </Button>
           </div>
@@ -156,7 +154,7 @@ export default function Header() {
           <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <button 
+                <button
                   type="button"
                   className={`hover:text-primary p-2 transition-colors ${getTextColor()}`}
                   aria-label={isMobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
@@ -190,7 +188,7 @@ export default function Header() {
                       문의하기
                     </a>
                     <div className="pt-8">
-                      <Button className="w-full" style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}} aria-label="문의하기 버튼">
+                      <Button className="w-full" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼">
                         문의하기
                       </Button>
                     </div>
