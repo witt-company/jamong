@@ -17,7 +17,11 @@ export default function Testimonial() {
           </div>
           <div className="flex flex-col items-center">
             <Avatar className="w-16 h-16 mb-4">
-              <AvatarImage src="/placeholder-avatar.jpg" alt="KKY" />
+              <AvatarImage 
+                src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/Testimonial/ceo-avatar.jpg" 
+                alt="KKY"
+                className="object-cover"
+              />
               <AvatarFallback>KKY</AvatarFallback>
             </Avatar>
             <p className="font-semibold text-gray-900">KKY</p>

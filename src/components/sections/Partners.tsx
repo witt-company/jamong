@@ -1,14 +1,5 @@
-import {
-  Logo01,
-  Logo02,
-  Logo03,
-  Logo04,
-  Logo05,
-  Logo06,
-  Logo07,
-  Logo08,
-} from "@/components/logos-06/logos";
 import { Marquee } from "@/components/ui/marquee";
+import Image from "next/image";
 
 export default function Partners() {
   return (
@@ -26,16 +17,53 @@ export default function Partners() {
         <div className="overflow-hidden">
           <Marquee
             pauseOnHover
-            className="[--duration:25s] [&_svg]:mx-8 [&_svg]:opacity-60 [&_svg]:hover:opacity-100 [&_svg]:transition-opacity"
+            className="[--duration:25s]"
           >
-            <Logo01 />
-            <Logo02 />
-            <Logo03 />
-            <Logo04 />
-            <Logo05 />
-            <Logo06 />
-            <Logo07 />
-            <Logo08 />
+            <div className="relative h-16 w-auto mx-8 opacity-60 hover:opacity-100 transition-opacity" style={{ width: '162px' }}>
+              <Image
+                src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_kepco.png"
+                alt="한국전력공사"
+                fill
+                sizes="162px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className="relative h-16 w-auto mx-8 opacity-60 hover:opacity-100 transition-opacity" style={{ width: '162px' }}>
+              <Image
+                src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_kdn.png"
+                alt="KDN"
+                fill
+                sizes="162px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className="relative h-16 w-auto mx-8 opacity-60 hover:opacity-100 transition-opacity" style={{ width: '162px' }}>
+              <Image
+                src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_kepri.png"
+                alt="전력연구원"
+                fill
+                sizes="162px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className="relative h-16 w-auto mx-8 opacity-60 hover:opacity-100 transition-opacity" style={{ width: '162px' }}>
+              <Image
+                src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_nuriflex.png"
+                alt="누리플렉스"
+                fill
+                sizes="162px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <div className="relative h-16 w-auto mx-8 opacity-60 hover:opacity-100 transition-opacity" style={{ width: '162px' }}>
+              <Image
+                src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_tbit.png"
+                alt="으뜸정보기술"
+                fill
+                sizes="162px"
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </Marquee>
         </div>
         

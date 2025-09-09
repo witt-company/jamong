@@ -74,11 +74,11 @@ export default function Features() {
                 <span className="uppercase font-medium text-sm text-muted-foreground">
                   {feature.category}
                 </span>
-                <h4 className="my-3 text-2xl font-semibold tracking-tight">
+                <h3 className="my-3 text-2xl font-semibold tracking-tight">
                   {feature.title}
-                </h4>
+                </h3>
                 <p className="text-muted-foreground">{feature.details}</p>
-                <Button asChild size="lg" className="mt-6 rounded-full gap-3">
+                <Button asChild size="lg" className="mt-6 rounded-full gap-3" style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}}>
                   <Link href={feature.tutorialLink}>
                     자세히 보기 <ArrowRight />
                   </Link>

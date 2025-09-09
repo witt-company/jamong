@@ -70,7 +70,7 @@ export default function CTA() {
             <Button 
               type="submit"
               size="lg"
-              className="h-12 px-6 bg-white text-primary hover:bg-white/90 font-semibold"
+              className="h-12 px-6 bg-white text-black hover:bg-white/90 font-semibold"
             >
               문의하기
             </Button>
