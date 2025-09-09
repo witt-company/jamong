@@ -5,26 +5,16 @@ import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
-
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
-interface FormErrors {
-  name: boolean;
-  email: boolean;
-  message: boolean;
-}
+import type { ContactFormData, ContactFormErrors } from '@/types/contact';
+import { EMAIL_CONFIG } from '@/config/emailjs';
 
 export default function CTA() {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     message: ''
   });
-  const [errors, setErrors] = useState<FormErrors>({
+  const [errors, setErrors] = useState<ContactFormErrors>({
     name: false,
     email: false,
     message: false
@@ -37,7 +27,7 @@ export default function CTA() {
   };
 
   const validateForm = () => {
-    const newErrors: FormErrors = {
+    const newErrors: ContactFormErrors = {
       name: !formData.name.trim(),
       email: !formData.email.trim() || !validateEmail(formData.email),
       message: !formData.message.trim()
@@ -58,14 +48,14 @@ export default function CTA() {
 
     try {
       await emailjs.send(
-        'service_37s1rem',
-        'template_qlgnh8l',
+        EMAIL_CONFIG.SERVICE_ID,
+        EMAIL_CONFIG.TEMPLATE_ID,
         {
           name: formData.name,
           email: formData.email,
           message: formData.message,
         },
-        'G4xjUv8ClC8S1stbL'
+        EMAIL_CONFIG.PUBLIC_KEY
       );
 
       toast.success('문의가 성공적으로 접수되었습니다!');
@@ -83,7 +73,7 @@ export default function CTA() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    if (errors[name as keyof FormErrors] && value.trim()) {
+    if (errors[name as keyof ContactFormErrors] && value.trim()) {
       setErrors(prev => ({ ...prev, [name]: false }));
     }
   };
@@ -107,7 +97,7 @@ export default function CTA() {
                 placeholder="이름"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`h-12 bg-white text-gray-900 placeholder:text-gray-500 ${
+                className={`h-12 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base ${
                   errors.name ? 'border-red-400 focus:border-red-400' : ''
                 }`}
               />
@@ -125,7 +115,7 @@ export default function CTA() {
                 placeholder="이메일"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`h-12 bg-white text-gray-900 placeholder:text-gray-500 ${
+                className={`h-12 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base ${
                   errors.email ? 'border-red-400 focus:border-red-400' : ''
                 }`}
               />
@@ -144,7 +134,7 @@ export default function CTA() {
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
-              className={`w-full px-3 py-3 bg-white text-gray-900 placeholder:text-gray-500 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              className={`w-full px-3 py-3 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                 errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'
               }`}
             />
@@ -159,7 +149,7 @@ export default function CTA() {
             type="submit"
             size="lg"
             disabled={isSubmitting}
-            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? '전송 중...' : '문의하기'}
           </Button>

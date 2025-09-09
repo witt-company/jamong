@@ -1,7 +1,8 @@
 "use client";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import type { PortfolioProject } from "@/types/portfolio";
 
-const portfolioData = [
+const portfolioData: PortfolioProject[] = [
   {
     category: "웹 애플리케이션",
     title: "공공기관 업무관리 시스템",

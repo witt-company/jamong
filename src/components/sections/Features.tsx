@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import type { FeatureItem } from "@/types/features";
 
-const features = [
+const features: FeatureItem[] = [
   {
     category: "마케팅 & 세일즈",
     title: "효과적인 리드 관리 시스템",

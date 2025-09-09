@@ -1,24 +1,52 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Pretendard Font */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://oezif1e9leolgilw.public.blob.vercel-storage.com/fonts/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://oezif1e9leolgilw.public.blob.vercel-storage.com/fonts/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://oezif1e9leolgilw.public.blob.vercel-storage.com/fonts/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://oezif1e9leolgilw.public.blob.vercel-storage.com/fonts/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://oezif1e9leolgilw.public.blob.vercel-storage.com/fonts/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   --font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Courier New", monospace;
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -61,19 +89,6 @@
   --border: #a8dadc;
   --input: #ffffff;
   --ring: #457b9d;
-  --chart-1: #e63946;
-  --chart-2: #457b9d;
-  --chart-3: #a8dadc;
-  --chart-4: #1d3557;
-  --chart-5: #f1faee;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1d3557;
-  --sidebar-primary: #e63946;
-  --sidebar-primary-foreground: #f1faee;
-  --sidebar-accent: #a8dadc;
-  --sidebar-accent-foreground: #1d3557;
-  --sidebar-border: #a8dadc;
-  --sidebar-ring: #457b9d;
 }
 
 .dark {
@@ -95,19 +110,6 @@
   --border: #457b9d;
   --input: #2a4a6b;
   --ring: #a8dadc;
-  --chart-1: #e63946;
-  --chart-2: #457b9d;
-  --chart-3: #a8dadc;
-  --chart-4: #f1faee;
-  --chart-5: #1d3557;
-  --sidebar: #2a4a6b;
-  --sidebar-foreground: #f1faee;
-  --sidebar-primary: #e63946;
-  --sidebar-primary-foreground: #f1faee;
-  --sidebar-accent: #457b9d;
-  --sidebar-accent-foreground: #f1faee;
-  --sidebar-border: #457b9d;
-  --sidebar-ring: #a8dadc;
 }
 
 @layer base {

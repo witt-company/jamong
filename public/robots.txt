@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jamong.it.kr
+
+# Sitemaps
+Sitemap: https://jamong.it.kr/sitemap.xml

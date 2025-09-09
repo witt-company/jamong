@@ -3,8 +3,76 @@ import "./globals.css";
 import { ToasterProvider } from "@/components/providers/ToasterProvider";
 
 export const metadata: Metadata = {
-  title: "랜딩 페이지",
-  description: "혁신적인 솔루션으로 비즈니스를 성장시키세요",
+  title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
+  description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 업무관리 시스템, 모바일 앱, 웹 애플리케이션 개발 전문. 전라남도 나주 소재.",
+  keywords: [
+    "자몽통신",
+    "자몽", 
+    "Jamong",
+    "웹개발", 
+    "앱개발", 
+    "업무관리시스템", 
+    "디지털전환", 
+    "공공기관시스템", 
+    "맞춤형개발",
+    "나주",
+    "전라남도",
+    "시스템개발",
+    "소프트웨어개발"
+  ],
+  authors: [{ name: "자몽통신" }],
+  creator: "자몽통신",
+  publisher: "자몽통신",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://jamong.it.kr"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
+    description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 업무관리 시스템, 모바일 앱, 웹 애플리케이션 개발 전문.",
+    url: "https://jamong.it.kr",
+    siteName: "자몽통신",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "자몽통신 - 디지털 솔루션 개발 전문기업",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
+    description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    // Google Search Console 인증 시 추가
+    // google: "google-verification-code",
+    // Naver 웹마스터도구 인증 시 추가  
+    // other: {
+    //   "naver-site-verification": "naver-verification-code",
+    // },
+  },
 };
 
 export default function RootLayout({
