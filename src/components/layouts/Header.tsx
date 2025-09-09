@@ -106,18 +106,6 @@ export default function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#about"
-                  className={cn(
-                    "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
-                    getTextColor()
-                  )}
-                  aria-label="소개 섹션으로 이동"
-                >
-                  소개
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink
                   href="#services"
                   className={cn(
                     "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
@@ -130,14 +118,26 @@ export default function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#contact"
+                  href="#about"
                   className={cn(
                     "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
                     getTextColor()
                   )}
-                  aria-label="문의하기 섹션으로 이동"
+                  aria-label="소개 섹션으로 이동"
                 >
-                  문의하기
+                  소개
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="#portfolio"
+                  className={cn(
+                    "px-4 py-2 text-base font-medium transition-colors hover:text-primary hover:bg-transparent focus:bg-transparent",
+                    getTextColor()
+                  )}
+                  aria-label="프로젝트 섹션으로 이동"
+                >
+                  프로젝트
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
@@ -145,8 +145,14 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button size="lg" className="px-4 py-2 text-base text-shadow-sm" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼">
-              문의하기
+            <Button 
+              size="lg" 
+              className="px-4 py-2 text-base text-shadow-sm" 
+              style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} 
+              aria-label="문의하기 버튼"
+              asChild
+            >
+              <a href="#contact">문의하기</a>
             </Button>
           </div>
 
@@ -176,18 +182,18 @@ export default function Header() {
                     <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
                       홈
                     </a>
-                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
-                      소개
-                    </a>
                     <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="서비스 섹션으로 이동">
                       서비스
                     </a>
-                    <a href="#contact" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="문의하기 섹션으로 이동">
-                      문의하기
+                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
+                      소개
+                    </a>
+                    <a href="#portfolio" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="프로젝트 섹션으로 이동">
+                      프로젝트
                     </a>
                     <div className="pt-4">
-                      <Button className="w-full" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼">
-                        문의하기
+                      <Button className="w-full" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼" asChild>
+                        <a href="#contact">문의하기</a>
                       </Button>
                     </div>
                   </div>

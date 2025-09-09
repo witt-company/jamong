@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export default function Hero() {
   return (
-    <section className="relative h-[100dvh] flex flex-col overflow-hidden">
+    <section id="home" className="relative h-[100dvh] flex flex-col overflow-hidden">
       {/* Background Image - 전체 화면을 덮음 */}
       <div className="absolute inset-0 w-full h-full">
         <Image
@@ -29,7 +29,7 @@ export default function Hero() {
             {/* Left Content */}
             <div className="text-left">
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 sm:mb-8 leading-tight">
+              <h1 className="text-display-2xl font-bold text-white mb-8 leading-[1.15]">
                 <span className="block">혁신적인 기술로</span>
                 <span className="block text-primary">비즈니스를 성장</span>
               </h1>
@@ -41,16 +41,18 @@ export default function Hero() {
                   className="h-12 sm:h-14 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl"
                   style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}}
                   aria-label="무료 상담 신청하기"
+                  asChild
                 >
-                  무료 상담 신청
+                  <a href="#contact">무료 상담 신청</a>
                 </Button>
                 <Button 
                   variant="outline"
                   size="lg"
                   className="h-12 sm:h-14 border-2 border-white text-white px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium hover:bg-white hover:text-gray-900 bg-transparent"
-                  aria-label="서비스 자세히 알아보기"
+                  aria-label="프로젝트 보기"
+                  asChild
                 >
-                  서비스 알아보기
+                  <a href="#portfolio">프로젝트 보기</a>
                 </Button>
               </div>
             </div>
