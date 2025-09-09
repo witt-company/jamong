@@ -61,7 +61,7 @@ export default function Features() {
                 index % 2 === 1 ? 'md:flex-row-reverse' : ''
               }`}
             >
-              <div className="w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2 overflow-hidden">
+              <div className="w-full aspect-[4/3] bg-muted rounded-xl basis-1/2 overflow-hidden">
                 <Image
                   src={feature.image}
                   alt={feature.title}

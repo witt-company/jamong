@@ -1,10 +1,12 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {
   useEffect,
   useRef,
   useState,
   createContext,
   useContext,
+  useCallback,
 } from "react";
 import {
   IconArrowNarrowLeft,
@@ -163,7 +165,16 @@ export const Card = ({
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null!);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  const { onCardClose } = useContext(CarouselContext);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    onCardClose(index);
+  }, [onCardClose, index]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -180,18 +191,9 @@ export const Card = ({
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, handleClose]);
 
-  useOutsideClick(containerRef, () => handleClose());
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    onCardClose(index);
-  };
+  useOutsideClick(containerRef, handleClose);
 
   return (
     <>
@@ -278,17 +280,18 @@ export const BlurImage = ({
   
   // Filter out Next.js specific props that shouldn't be passed to img
   const { 
-    blurDataURL, 
-    placeholder, 
-    fill, 
-    priority, 
-    quality, 
-    sizes, 
-    unoptimized,
+    blurDataURL: _unused1, 
+    placeholder: _unused2, 
+    fill: _unused3, 
+    priority: _unused4, 
+    quality: _unused5, 
+    sizes: _unused6, 
+    unoptimized: _unused7,
     ...imgProps 
   } = rest;
   
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       className={cn(
         "h-full w-full transition duration-300",
