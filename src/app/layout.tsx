@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ToasterProvider } from "@/components/providers/ToasterProvider";
 
 export const metadata: Metadata = {
   title: "랜딩 페이지",
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="ko" data-scroll-behavior="smooth">
       <body className="font-sans antialiased">
         {children}
+        <ToasterProvider />
       </body>
     </html>
   );

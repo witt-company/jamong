@@ -3,39 +3,88 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  name: boolean;
+  email: boolean;
+  message: boolean;
+}
 
 export default function CTA() {
-  const [email, setEmail] = useState('');
-  const [isValid, setIsValid] = useState(true);
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState<FormErrors>({
+    name: false,
+    email: false,
+    message: false
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const validateForm = () => {
+    const newErrors: FormErrors = {
+      name: !formData.name.trim(),
+      email: !formData.email.trim() || !validateEmail(formData.email),
+      message: !formData.message.trim()
+    };
     
-    if (!email) {
-      setIsValid(false);
-      return;
-    }
-
-    if (!validateEmail(email)) {
-      setIsValid(false);
-      return;
-    }
-
-    setIsValid(true);
-    // TODO: 이메일 처리 로직 추가
-    alert(`문의 메일이 접수되었습니다: ${email}`);
-    setEmail('');
+    setErrors(newErrors);
+    return !Object.values(newErrors).some(error => error);
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    if (!isValid && e.target.value) {
-      setIsValid(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      await emailjs.send(
+        'service_37s1rem',
+        'template_qlgnh8l',
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        'G4xjUv8ClC8S1stbL'
+      );
+
+      toast.success('문의가 성공적으로 접수되었습니다!');
+      setFormData({ name: '', email: '', message: '' });
+      setErrors({ name: false, email: false, message: false });
+    } catch (error) {
+      console.error('Email send failed:', error);
+      toast.error('메일 전송에 실패했습니다. 다시 시도해주세요.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    if (errors[name as keyof FormErrors] && value.trim()) {
+      setErrors(prev => ({ ...prev, [name]: false }));
     }
   };
 
@@ -46,35 +95,74 @@ export default function CTA() {
           프로젝트 문의하기
         </h2>
         <p className="text-lg lg:text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-          이메일을 남겨주시면 24시간 내 전문가가 직접 연락드립니다.
+          정보를 남겨주시면 24시간 내 전문가가 직접 연락드립니다.
         </p>
         
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-          <div className="flex flex-col sm:flex-row gap-3">
-            <div className="flex-1">
+        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
               <Input
-                type="email"
-                placeholder="이메일을 입력해주세요"
-                value={email}
-                onChange={handleEmailChange}
+                type="text"
+                name="name"
+                placeholder="이름"
+                value={formData.name}
+                onChange={handleInputChange}
                 className={`h-12 bg-white text-gray-900 placeholder:text-gray-500 ${
-                  !isValid ? 'border-red-400 focus:border-red-400' : ''
+                  errors.name ? 'border-red-400 focus:border-red-400' : ''
                 }`}
               />
-              {!isValid && (
+              {errors.name && (
+                <p className="text-red-200 text-sm mt-1 text-left">
+                  이름을 입력해주세요
+                </p>
+              )}
+            </div>
+            
+            <div>
+              <Input
+                type="email"
+                name="email"
+                placeholder="이메일"
+                value={formData.email}
+                onChange={handleInputChange}
+                className={`h-12 bg-white text-gray-900 placeholder:text-gray-500 ${
+                  errors.email ? 'border-red-400 focus:border-red-400' : ''
+                }`}
+              />
+              {errors.email && (
                 <p className="text-red-200 text-sm mt-1 text-left">
                   올바른 이메일 주소를 입력해주세요
                 </p>
               )}
             </div>
-            <Button 
-              type="submit"
-              size="lg"
-              className="h-12 px-6 bg-white text-black hover:bg-white/90 font-semibold"
-            >
-              문의하기
-            </Button>
           </div>
+
+          <div>
+            <textarea
+              name="message"
+              placeholder="문의 내용을 입력해주세요"
+              value={formData.message}
+              onChange={handleInputChange}
+              rows={4}
+              className={`w-full px-3 py-3 bg-white text-gray-900 placeholder:text-gray-500 border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'
+              }`}
+            />
+            {errors.message && (
+              <p className="text-red-200 text-sm mt-1 text-left">
+                문의 내용을 입력해주세요
+              </p>
+            )}
+          </div>
+
+          <Button 
+            type="submit"
+            size="lg"
+            disabled={isSubmitting}
+            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isSubmitting ? '전송 중...' : '문의하기'}
+          </Button>
         </form>
       </div>
     </section>
