@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex space-x-4">
               <button 
                 onClick={() => handleSocialClick('블로그')}
-                className="text-gray-300 hover:text-primary transition-colors" 
+                className="text-gray-300 hover:text-primary transition-colors cursor-pointer" 
                 aria-label="블로그로 이동"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
@@ -31,7 +31,7 @@ export default function Footer() {
               </button>
               <button 
                 onClick={() => handleSocialClick('유튜브')}
-                className="text-gray-300 hover:text-primary transition-colors" 
+                className="text-gray-300 hover:text-primary transition-colors cursor-pointer" 
                 aria-label="유튜브로 이동"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -40,7 +40,7 @@ export default function Footer() {
               </button>
               <button 
                 onClick={() => handleSocialClick('인스타그램')}
-                className="text-gray-300 hover:text-primary transition-colors" 
+                className="text-gray-300 hover:text-primary transition-colors cursor-pointer" 
                 aria-label="인스타그램으로 이동"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">

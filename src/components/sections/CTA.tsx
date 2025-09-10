@@ -90,7 +90,7 @@ export default function CTA() {
             type="submit"
             size="lg"
             disabled={isSubmitting}
-            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg hover:shadow-white/20 hover:-translate-y-0.5"
+            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold text-lg cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? '전송 중...' : '문의하기'}
           </Button>
