@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Partners() {
   return (
-    <section className="section-padding-sm bg-gray-50">
+    <section className="section-padding-connected-top section-padding bg-gray-50">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-lg sm:text-xl font-medium text-gray-700 mb-2">

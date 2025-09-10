@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Testimonial() {
   return (
-    <section id="about" className="section-padding bg-gray-50">
+    <section id="about" className="section-padding section-padding-connected-bottom bg-gray-50">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <blockquote className="text-2xl md:text-3xl font-semibold text-gray-900 mb-8 max-w-3xl mx-auto leading-relaxed">
