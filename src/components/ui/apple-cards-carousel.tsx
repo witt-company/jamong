@@ -21,13 +21,21 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 interface CarouselProps {
   items: React.ReactElement[];
   initialScroll?: number;
+  isVisible?: boolean;
 }
+
+type TechStack = {
+  name: string;
+  color: string;
+};
 
 type Card = {
   src: string;
   title: string;
   category: string;
-  content: React.ReactNode;
+  description: string;
+  features: string[];
+  techStack: TechStack[];
 };
 
 export const CarouselContext = createContext<{
@@ -38,7 +46,7 @@ export const CarouselContext = createContext<{
   currentIndex: 0,
 });
 
-export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
+export const Carousel = ({ items, initialScroll = 0, isVisible = false }: CarouselProps) => {
   const carouselRef = React.useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
@@ -50,6 +58,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       checkScrollability();
     }
   }, [initialScroll]);
+
 
   const checkScrollability = () => {
     if (carouselRef.current) {
@@ -116,13 +125,16 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   opacity: 0,
                   y: 20,
                 }}
-                animate={{
+                animate={isVisible ? {
                   opacity: 1,
                   y: 0,
+                } : {
+                  opacity: 0,
+                  y: 20,
                 }}
                 transition={{
                   duration: 0.5,
-                  delay: 0.2 * index,
+                  delay: isVisible ? 0.2 * index : 0,
                   ease: "easeOut",
                 }}
                 key={"card" + index}
@@ -216,7 +228,7 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[160] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+              className="relative z-[160] mx-auto my-10 h-fit max-w-4xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
             >
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -236,7 +248,31 @@ export const Card = ({
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.content}</div>
+              <div className="py-10">
+                <div>
+                  <p className="text-neutral-600 text-base mb-4">
+                    {card.description}
+                  </p>
+                  <div className="mb-4">
+                    <h4 className="text-lg font-semibold mb-2">주요 기능</h4>
+                    <ul className="list-disc list-inside text-neutral-600 space-y-1">
+                      {card.features.map((feature, index) => (
+                        <li key={index}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mb-4">
+                    <h4 className="text-lg font-semibold mb-2">기술 스택</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {card.techStack.map((tech, index) => (
+                        <span key={index} className={`px-3 py-1 ${tech.color} rounded-full text-sm`}>
+                          {tech.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         )}
@@ -244,7 +280,7 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
+        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900 group"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
@@ -265,7 +301,7 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
-          className="absolute inset-0 z-10 object-cover"
+          className="absolute inset-0 z-10 object-cover transition-transform duration-300 ease-out group-hover:scale-105"
         />
       </motion.button>
     </>

@@ -1,0 +1,69 @@
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Courier New", monospace;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #f1faee;
+  --foreground: #1d3557;
+  --card: #ffffff;
+  --card-foreground: #1d3557;
+  --popover: #ffffff;
+  --popover-foreground: #1d3557;
+  --primary: #e63946;
+  --primary-foreground: #ffffff;
+  --secondary: #a8dadc;
+  --secondary-foreground: #1d3557;
+  --muted: #a8dadc;
+  --muted-foreground: #457b9d;
+  --accent: #457b9d;
+  --accent-foreground: #f1faee;
+  --destructive: #e63946;
+  --border: #a8dadc;
+  --input: #ffffff;
+  --ring: #457b9d;
+}
+
+.dark {
+  --background: #1d3557;
+  --foreground: #f1faee;
+  --card: #2a4a6b;
+  --card-foreground: #f1faee;
+  --popover: #2a4a6b;
+  --popover-foreground: #f1faee;
+  --primary: #e63946;
+  --primary-foreground: #f1faee;
+  --secondary: #457b9d;
+  --secondary-foreground: #f1faee;
+  --muted: #457b9d;
+  --muted-foreground: #a8dadc;
+  --accent: #a8dadc;
+  --accent-foreground: #1d3557;
+  --destructive: #e63946;
+  --border: #457b9d;
+  --input: #2a4a6b;
+  --ring: #a8dadc;
+}

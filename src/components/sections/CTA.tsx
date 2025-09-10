@@ -2,81 +2,16 @@
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
-import { toast } from 'sonner';
-import type { ContactFormData, ContactFormErrors } from '@/types/contact';
-import { EMAIL_CONFIG } from '@/config/emailjs';
+import { useContactForm } from '@/hooks/use-contact-form';
 
 export default function CTA() {
-  const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [errors, setErrors] = useState<ContactFormErrors>({
-    name: false,
-    email: false,
-    message: false
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validateForm = () => {
-    const newErrors: ContactFormErrors = {
-      name: !formData.name.trim(),
-      email: !formData.email.trim() || !validateEmail(formData.email),
-      message: !formData.message.trim()
-    };
-    
-    setErrors(newErrors);
-    return !Object.values(newErrors).some(error => error);
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      await emailjs.send(
-        EMAIL_CONFIG.SERVICE_ID,
-        EMAIL_CONFIG.TEMPLATE_ID,
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        EMAIL_CONFIG.PUBLIC_KEY
-      );
-
-      toast.success('문의가 성공적으로 접수되었습니다!');
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({ name: false, email: false, message: false });
-    } catch (error) {
-      console.error('Email send failed:', error);
-      toast.error('메일 전송에 실패했습니다. 다시 시도해주세요.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    
-    if (errors[name as keyof ContactFormErrors] && value.trim()) {
-      setErrors(prev => ({ ...prev, [name]: false }));
-    }
-  };
+  const {
+    formData,
+    errors,
+    isSubmitting,
+    handleSubmit,
+    handleInputChange,
+  } = useContactForm();
 
   return (
     <section id="contact" className="bg-gradient-to-r from-primary to-primary/80 section-padding">
@@ -97,8 +32,10 @@ export default function CTA() {
                 placeholder="이름"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`h-12 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base ${
-                  errors.name ? 'border-red-400 focus:border-red-400' : ''
+                className={`h-12 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base border rounded-md focus:outline-none focus-visible:ring-0 transition-all duration-200 ${
+                  errors.name 
+                    ? 'border-red-400 focus:border-red-400 focus-visible:border-red-400 focus:ring-2 focus-visible:ring-2 focus:ring-red-400/20 focus-visible:ring-red-400/20 focus:shadow-lg focus:shadow-red-400/10' 
+                    : 'border-gray-300 focus:border-primary focus-visible:border-primary focus:ring-2 focus-visible:ring-2 focus:ring-primary/20 focus-visible:ring-primary/20 focus:shadow-lg focus:shadow-primary/10'
                 }`}
               />
               {errors.name && (
@@ -115,8 +52,10 @@ export default function CTA() {
                 placeholder="이메일"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`h-12 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base ${
-                  errors.email ? 'border-red-400 focus:border-red-400' : ''
+                className={`h-12 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base border rounded-md focus:outline-none focus-visible:ring-0 transition-all duration-200 ${
+                  errors.email 
+                    ? 'border-red-400 focus:border-red-400 focus-visible:border-red-400 focus:ring-2 focus-visible:ring-2 focus:ring-red-400/20 focus-visible:ring-red-400/20 focus:shadow-lg focus:shadow-red-400/10' 
+                    : 'border-gray-300 focus:border-primary focus-visible:border-primary focus:ring-2 focus-visible:ring-2 focus:ring-primary/20 focus-visible:ring-primary/20 focus:shadow-lg focus:shadow-primary/10'
                 }`}
               />
               {errors.email && (
@@ -134,8 +73,10 @@ export default function CTA() {
               value={formData.message}
               onChange={handleInputChange}
               rows={4}
-              className={`w-full px-3 py-3 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base border rounded-md resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.message ? 'border-red-400 focus:border-red-400 focus:ring-red-400' : 'border-gray-300'
+              className={`w-full px-3 py-3 bg-white text-gray-900 text-base placeholder:text-gray-500 placeholder:text-base border rounded-md resize-none focus:outline-none transition-all duration-200 ${
+                errors.message 
+                  ? 'border-red-400 focus:border-red-400 focus:ring-2 focus:ring-red-400/20 focus:shadow-lg focus:shadow-red-400/10' 
+                  : 'border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 focus:shadow-lg focus:shadow-primary/10'
               }`}
             />
             {errors.message && (
@@ -149,7 +90,7 @@ export default function CTA() {
             type="submit"
             size="lg"
             disabled={isSubmitting}
-            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full h-12 bg-white text-black hover:bg-white/90 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:shadow-lg hover:shadow-white/20 hover:-translate-y-0.5"
           >
             {isSubmitting ? '전송 중...' : '문의하기'}
           </Button>

@@ -1,6 +1,13 @@
+export interface TechStack {
+  name: string;
+  color: string;
+}
+
 export interface PortfolioProject {
   category: string;
   title: string;
   src: string;
-  content: React.ReactNode;
+  description: string;
+  features: string[];
+  techStack: TechStack[];
 }

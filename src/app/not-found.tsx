@@ -24,10 +24,14 @@ export default function NotFound() {
         </div>
 
         {/* 액션 버튼들 */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button asChild size="lg" className="w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+          <Button 
+            asChild 
+            size="lg" 
+            className="h-12 sm:h-14 px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl w-full sm:w-auto"
+          >
             <Link href="/">
-              🏠 홈으로 돌아가기
+              홈으로 돌아가기
             </Link>
           </Button>
           
@@ -35,10 +39,10 @@ export default function NotFound() {
             asChild 
             variant="outline" 
             size="lg" 
-            className="w-full sm:w-auto"
+            className="h-12 sm:h-14 border-2 border-primary text-primary px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium hover:bg-primary hover:text-white bg-transparent w-full sm:w-auto"
           >
             <Link href="#contact">
-              📞 문의하기
+              문의하기
             </Link>
           </Button>
         </div>
