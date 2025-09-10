@@ -250,7 +250,7 @@ export const Card = ({
               </motion.p>
               <div className="py-10">
                 <div>
-                  <p className="text-neutral-600 text-base mb-4">
+                  <p className="text-neutral-600 text-base mb-4 whitespace-pre-line">
                     {card.description}
                   </p>
                   <div className="mb-4">

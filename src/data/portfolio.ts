@@ -3,19 +3,20 @@ import type { PortfolioProject } from "@/types/portfolio";
 export const portfolioData: PortfolioProject[] = [
   {
     category: "웹 애플리케이션",
-    title: "공공기관 업무관리 시스템",
-    src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    description: "공공기관의 복잡한 업무 프로세스를 효율적으로 관리할 수 있는 종합 솔루션을 개발했습니다.",
+    title: "1인가구 안부살핌 서비스",
+    src: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/portfolio/portfolio-oneperson.jpg",
+    description: "전력빅데이터와 통신데이터를 분석하여 1인가구의 안부 이상 여부를 확인하고\n사회복지 공무원 등에게 SMS로 알려주어 고독사를 예방하는 인공지능 서비스입니다.",
     features: [
-      "전자결재 시스템",
-      "업무 일정 관리", 
-      "부서간 협업 도구",
-      "문서 관리 시스템"
+      "전력데이터 분석 (한전)",
+      "통신데이터 분석 (SKT, KT, LGU+)", 
+      "통합분석센터 이상 감지",
+      "복지담당자 단계적 알림"
     ],
     techStack: [
       { name: "React", color: "bg-blue-100 text-blue-800" },
       { name: "Node.js", color: "bg-green-100 text-green-800" },
-      { name: "PostgreSQL", color: "bg-purple-100 text-purple-800" }
+      { name: "Express", color: "bg-gray-100 text-gray-800" },
+      { name: "MariaDB", color: "bg-purple-100 text-purple-800" }
     ],
   },
   {
