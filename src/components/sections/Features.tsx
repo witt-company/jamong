@@ -9,10 +9,10 @@ export default function Features() {
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 lg:mb-20">
           <h2 className="text-display-lg font-bold mb-6 text-gray-900">
-            비즈니스 전략을 강화하세요
+            전문적인 IT 솔루션 서비스
           </h2>
           <p className="text-muted-foreground text-lg lg:text-xl max-w-2xl mx-auto">
-            성공을 위해 설계된 지능형 도구로 전략을 향상시키세요.
+            공공기관과 기업을 위한 맞춤형 개발 서비스로 디지털 혁신을 실현합니다.
           </p>
         </div>
         <div className="space-y-16 lg:space-y-20">

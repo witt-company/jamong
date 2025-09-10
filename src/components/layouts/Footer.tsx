@@ -15,7 +15,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-lg font-semibold mb-4">Jamong</h3>
             <p className="text-gray-300 mb-4 max-w-md">
-              혁신적인 기술로 비즈니스의 성장을 지원하는 전문 기업입니다.
+              공공기관 특화 IT 솔루션 개발 전문 기업입니다.
             </p>
             <div className="flex space-x-4">
               <button 

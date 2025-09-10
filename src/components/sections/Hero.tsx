@@ -30,8 +30,8 @@ export default function Hero() {
             <div className="text-left">
               {/* Main Headline */}
               <h1 className="text-display-2xl font-bold text-white mb-8 leading-[1.15]">
-                <span className="block">혁신적인 기술로</span>
-                <span className="block text-primary">비즈니스를 성장</span>
+                <span className="block">맞춤형 솔루션</span>
+                <span className="block text-primary">IT 개발 파트너</span>
               </h1>
               
               {/* CTA Buttons */}

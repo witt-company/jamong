@@ -4,14 +4,15 @@ import { ToasterProvider } from "@/components/providers/ToasterProvider";
 
 export const metadata: Metadata = {
   title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
-  description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 업무관리 시스템, 모바일 앱, 웹 애플리케이션 개발 전문. 전라남도 나주 소재.",
+  description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 원격검침, 에너지 모니터링, 모바일 앱, 웹 애플리케이션 개발 전문. 전라남도 나주 소재.",
   keywords: [
     "자몽통신",
     "자몽", 
     "Jamong",
     "웹개발", 
     "앱개발", 
-    "업무관리시스템", 
+    "원격검침", 
+    "에너지모니터링",
     "디지털전환", 
     "공공기관시스템", 
     "맞춤형개발",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
-    description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 업무관리 시스템, 모바일 앱, 웹 애플리케이션 개발 전문.",
+    description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 원격검침, 에너지 모니터링, 모바일 앱, 웹 애플리케이션 개발 전문.",
     url: "https://jamong.it.kr",
     siteName: "자몽통신",
     images: [
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
-    description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다.",
+    description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 원격검침, 에너지 모니터링 전문.",
     images: ["/og-image.png"],
   },
   robots: {
