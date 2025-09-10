@@ -172,12 +172,12 @@ export default function Header() {
                 </button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] z-[200] bg-white">
-                <div className="px-4 py-4">
+                <div className="px-4 py-4 pt-12">
                   <div className="sr-only">
                     <SheetTitle>메뉴</SheetTitle>
                     <SheetDescription>네비게이션 메뉴</SheetDescription>
                   </div>
-                  <div className="space-y-4">
+                  <div className="space-y-2">
                     <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
                       홈
                     </a>

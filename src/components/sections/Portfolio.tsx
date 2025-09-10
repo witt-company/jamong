@@ -158,7 +158,7 @@ export default function Portfolio() {
   return (
     <section id="portfolio" className="section-padding bg-white">
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-display-lg font-bold mb-6 text-gray-900">
             성공적인 프로젝트 사례
           </h2>

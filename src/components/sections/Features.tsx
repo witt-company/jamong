@@ -1,7 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Construction, ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import { AnimatedSubscribeButton } from "@/components/ui/magicui/animated-subscribe-button";
 import type { FeatureItem } from "@/types/features";
 
 const features: FeatureItem[] = [
@@ -79,11 +78,16 @@ export default function Features() {
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground">{feature.details}</p>
-                <Button asChild size="lg" className="mt-6 rounded-full gap-3" style={{textShadow: '0 1px 2px rgba(0,0,0,0.3)'}}>
-                  <Link href={feature.tutorialLink}>
-                    자세히 보기 <ArrowRight />
-                  </Link>
-                </Button>
+                <AnimatedSubscribeButton className="mt-6 w-36">
+                  <span className="group inline-flex items-center">
+                    자세히 보기
+                    <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <span className="group inline-flex items-center">
+                    <Construction className="mr-2 size-4" />
+                    준비중
+                  </span>
+                </AnimatedSubscribeButton>
               </div>
             </div>
           ))}
