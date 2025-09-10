@@ -84,12 +84,16 @@ export const Carousel = ({ items, initialScroll = 0, isVisible = false }: Carous
     if (carouselRef.current) {
       const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
       const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
+      
+      // 마지막 카드일 경우 처음으로 돌아가기
+      const nextIndex = index + 1 >= items.length ? 0 : index + 1;
+      const scrollPosition = (cardWidth + gap) * nextIndex;
+      
       carouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: "smooth",
       });
-      setCurrentIndex(index);
+      setCurrentIndex(nextIndex);
     }
   };
 
