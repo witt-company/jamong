@@ -10,4 +10,5 @@ export interface PortfolioProject {
   description: string;
   features: string[];
   techStack: TechStack[];
+  isReady?: boolean;
 }

@@ -36,6 +36,7 @@ type Card = {
   description: string;
   features: string[];
   techStack: TechStack[];
+  isReady?: boolean;
 };
 
 export const CarouselContext = createContext<{
@@ -188,6 +189,16 @@ export const Card = ({
   const { onCardClose } = useContext(CarouselContext);
 
   const handleOpen = () => {
+    if (card.isReady === false) {
+      // sonner 토스트로 준비중 메시지 표시
+      import('sonner').then(({ toast }) => {
+        toast.info("준비 중인 프로젝트입니다", {
+          description: "해당 프로젝트는 현재 개발 중입니다. 자세한 내용은 문의해 주세요.",
+          duration: 3000,
+        });
+      });
+      return;
+    }
     setOpen(true);
   };
 
