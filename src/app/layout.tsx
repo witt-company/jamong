@@ -67,12 +67,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Google Search Console 인증 시 추가
-    // google: "google-verification-code",
-    // Naver 웹마스터도구 인증 시 추가  
-    // other: {
-    //   "naver-site-verification": "naver-verification-code",
-    // },
+    google: "NLaY1n_yqPsyjD_rJXmiTZj-1Sm6Gkj4-sojd2XQVgo",
+    other: {
+      "naver-site-verification": "8e821ace4486c74fd21181f92e0a69c92afdeefb",
+    },
   },
 };
 

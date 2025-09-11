@@ -77,7 +77,7 @@ export const portfolioData: PortfolioProject[] = [
   {
     category: "IoT 솔루션",
     title: "스마트 시티 관제 시스템",
-    src: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    src: "https://images.unsplash.com/photo-1603286656381-6f04fb84435e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "도시 전반의 IoT 센서 데이터를 통합 관리하여 스마트 시티 인프라를 효율적으로 운영하는 시스템 개발 예정입니다.",
     features: [
       "환경 모니터링",
