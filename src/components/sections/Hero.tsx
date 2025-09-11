@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image - 전체 화면을 덮음 */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/hero/hero-backgroud.jpg"
+          src="https://oezif1e9leolgilw.public.blob.vercel-storage.com/hero/hero-background.jpg"
           alt=""
           fill
           className="object-cover grayscale object-center lg:object-right"
