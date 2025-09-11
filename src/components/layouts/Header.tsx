@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetTitle,
@@ -177,25 +178,27 @@ export default function Header() {
                     <SheetTitle>메뉴</SheetTitle>
                     <SheetDescription>네비게이션 메뉴</SheetDescription>
                   </div>
-                  <div className="space-y-2">
-                    <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
-                      홈
-                    </a>
-                    <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="서비스 섹션으로 이동">
-                      서비스
-                    </a>
-                    <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
-                      소개
-                    </a>
-                    <a href="#portfolio" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="프로젝트 섹션으로 이동">
-                      프로젝트
-                    </a>
-                    <div className="pt-4">
-                      <Button className="w-full" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼" asChild>
-                        <a href="#contact">문의하기</a>
-                      </Button>
+                  <SheetClose asChild>
+                    <div className="space-y-2">
+                      <a href="#home" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="홈 섹션으로 이동">
+                        홈
+                      </a>
+                      <a href="#services" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="서비스 섹션으로 이동">
+                        서비스
+                      </a>
+                      <a href="#about" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="소개 섹션으로 이동">
+                        소개
+                      </a>
+                      <a href="#portfolio" className="block px-4 py-4 text-lg font-medium text-gray-900 hover:text-primary transition-colors rounded-lg hover:bg-gray-50" aria-label="프로젝트 섹션으로 이동">
+                        프로젝트
+                      </a>
+                      <div className="pt-4">
+                        <Button className="w-full" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }} aria-label="문의하기 버튼" asChild>
+                          <a href="#contact">문의하기</a>
+                        </Button>
+                      </div>
                     </div>
-                  </div>
+                  </SheetClose>
                 </div>
               </SheetContent>
             </Sheet>
