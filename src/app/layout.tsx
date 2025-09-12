@@ -1,34 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { ToasterProvider } from "@/components/providers/ToasterProvider";
-
-const pretendard = localFont({
-  src: [
-    {
-      path: '../../public/fonts/pretendard/Pretendard-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/pretendard/Pretendard-Medium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/pretendard/Pretendard-SemiBold.woff2',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/pretendard/Pretendard-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-pretendard',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
@@ -157,7 +129,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${pretendard.variable} font-sans antialiased`}>
+      <body className="font-pretendard antialiased">
+        <link
+          rel="preconnect"
+          href="https://cdn.jsdelivr.net"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+        />
         {children}
         <ToasterProvider />
       </body>
