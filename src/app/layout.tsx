@@ -79,8 +79,53 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "자몽통신",
+    "alternateName": "Jamong Communications",
+    "url": "https://jamong.it.kr",
+    "logo": "https://jamong.it.kr/og-image.png",
+    "description": "공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공하는 전문기업",
+    "foundingDate": "2020",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "빛가람동 그린로 370, 4층 414호",
+      "addressLocality": "나주시",
+      "addressRegion": "전라남도",
+      "postalCode": "58327",
+      "addressCountry": "KR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+82-10-6850-7890",
+      "contactType": "customer service",
+      "availableLanguage": "Korean"
+    },
+    "sameAs": [
+      "https://jamong.it.kr"
+    ],
+    "serviceType": [
+      "웹 개발",
+      "모바일 앱 개발",
+      "원격검침 시스템",
+      "에너지 모니터링",
+      "디지털 전환 컨설팅"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "South Korea"
+    }
+  };
+
   return (
     <html lang="ko" data-scroll-behavior="smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
         <ToasterProvider />
