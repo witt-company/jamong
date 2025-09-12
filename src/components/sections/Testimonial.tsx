@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Image from 'next/image';
 
 export default function Testimonial() {
   return (
@@ -16,14 +16,15 @@ export default function Testimonial() {
             <p>그에 맞는 맞춤형 시스템을 제안하고 구축해드립니다.</p>
           </div>
           <div className="flex flex-col items-center">
-            <Avatar className="w-16 h-16 mb-4">
-              <AvatarImage 
-                src="/images/testimonials/ceo-avatar.jpg" 
+            <div className="w-16 h-16 mb-4 relative overflow-hidden rounded-full">
+              <Image
+                src="/images/testimonials/ceo-avatar.jpg"
                 alt="KKY"
+                fill
                 className="object-cover"
+                sizes="64px"
               />
-              <AvatarFallback>KKY</AvatarFallback>
-            </Avatar>
+            </div>
             <p className="font-semibold text-gray-900">KKY</p>
             <p className="text-sm text-gray-600">자몽대표</p>
           </div>
