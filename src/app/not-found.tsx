@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="max-w-md mx-auto text-center">
         {/* 404 숫자 */}
         <div className="mb-8">
-          <h1 className="text-8xl md:text-9xl font-black text-primary mb-4 opacity-10">
+          <h1 className="text-8xl md:text-9xl font-bold text-primary mb-4 opacity-10">
             404
           </h1>
         </div>
