@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/images/logo/favicon.ico",
+  },
   openGraph: {
     title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
     description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 원격검침, 에너지 모니터링, 모바일 앱, 웹 애플리케이션 개발 전문.",

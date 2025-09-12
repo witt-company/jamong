@@ -4,7 +4,7 @@ export const portfolioData: PortfolioProject[] = [
   {
     category: "웹 애플리케이션",
     title: "1인가구 안부살핌 서비스",
-    src: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/portfolio/portfolio-oneperson.jpg",
+    src: "/images/portfolio/portfolio-oneperson.jpg",
     description: "전력빅데이터와 통신데이터를 분석하여 1인가구의 안부 이상 여부를 확인하고\n사회복지 공무원 등에게 SMS로 알려주어 고독사를 예방하는 인공지능 서비스입니다.",
     features: [
       "전력데이터 분석 (한전)",

@@ -40,7 +40,7 @@ export default function Features() {
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground">{feature.details}</p>
-                <AnimatedSubscribeButton className="mt-6 w-36">
+                <AnimatedSubscribeButton className="mt-6 w-36" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.3)' }}>
                   <span className="group inline-flex items-center">
                     자세히 보기
                     <ChevronRightIcon className="ml-1 size-4 transition-transform duration-300 group-hover:translate-x-1" />

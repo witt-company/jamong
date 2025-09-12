@@ -7,27 +7,27 @@ export interface Partner {
 export const partnersData: Partner[] = [
   {
     name: "한국전력공사",
-    logo: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_kepco.png",
+    logo: "/images/partners/partners_kepco.png",
     width: 162,
   },
   {
     name: "KDN",
-    logo: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_kdn.png", 
+    logo: "/images/partners/partners_kdn.png", 
     width: 162,
   },
   {
     name: "전력연구원",
-    logo: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_kepri.png",
+    logo: "/images/partners/partners_kepri.png",
     width: 162,
   },
   {
     name: "누리플렉스",
-    logo: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_nuriflex.png",
+    logo: "/images/partners/partners_nuriflex.png",
     width: 162,
   },
   {
     name: "으뜸정보기술",
-    logo: "https://oezif1e9leolgilw.public.blob.vercel-storage.com/partners/partners_tbit.png",
+    logo: "/images/partners/partners_tbit.png",
     width: 162,
   },
 ];
