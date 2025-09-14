@@ -7,14 +7,31 @@ export const metadata: Metadata = {
   description: "자몽통신은 공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공합니다. 원격검침, 에너지 모니터링, 모바일 앱, 웹 애플리케이션 개발 전문. 전라남도 나주 소재.",
   keywords: [
     "자몽통신",
-    "자몽", 
+    "자몽",
     "Jamong",
-    "웹개발", 
-    "앱개발", 
-    "원격검침", 
+    "나주 웹개발",
+    "전남 앱개발",
+    "나주 시스템개발",
+    "전라남도 소프트웨어개발",
+    "원격검침 시스템 개발",
+    "원격검침 전문업체",
+    "에너지모니터링 시스템",
+    "에너지관리 솔루션",
+    "공공기관 시스템 개발",
+    "공공기관 전용 솔루션",
+    "디지털전환 컨설팅",
+    "맞춤형 개발 전문",
+    "IoT 원격검침",
+    "스마트 에너지 모니터링",
+    "나주 IT회사",
+    "전남 개발회사",
+    "공공기관 개발 전문",
+    "웹개발",
+    "앱개발",
+    "원격검침",
     "에너지모니터링",
-    "디지털전환", 
-    "공공기관시스템", 
+    "디지털전환",
+    "공공기관시스템",
     "맞춤형개발",
     "나주",
     "전라남도",
@@ -86,10 +103,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "자몽통신",
-    "alternateName": "Jamong Communications",
+    "alternateName": ["Jamong Communications", "자몽", "Jamong"],
     "url": "https://jamong.it.kr",
     "logo": "https://jamong.it.kr/og-image.png",
-    "description": "공공기관과 기업을 위한 실용적인 디지털 솔루션을 제공하는 전문기업",
+    "description": "전라남도 나주시 소재 공공기관과 기업 전용 디지털 솔루션 개발 전문기업. 원격검침 시스템, 에너지 모니터링, IoT 솔루션, 모바일 앱, 웹 애플리케이션 개발 전문",
     "foundingDate": "2020",
     "address": {
       "@type": "PostalAddress",
@@ -103,22 +120,67 @@ export default function RootLayout({
       "@type": "ContactPoint",
       "telephone": "+82-10-6850-7890",
       "contactType": "customer service",
-      "availableLanguage": "Korean"
+      "availableLanguage": "Korean",
+      "areaServed": "전라남도"
     },
     "sameAs": [
       "https://jamong.it.kr"
     ],
     "serviceType": [
-      "웹 개발",
+      "원격검침 시스템 개발",
+      "에너지 모니터링 솔루션",
+      "IoT 시스템 구축",
+      "공공기관 전용 시스템 개발",
+      "웹 애플리케이션 개발",
       "모바일 앱 개발",
-      "원격검침 시스템",
-      "에너지 모니터링",
-      "디지털 전환 컨설팅"
+      "디지털 전환 컨설팅",
+      "시스템 유지보수"
     ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "South Korea"
-    }
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "전라남도"
+      },
+      {
+        "@type": "City",
+        "name": "나주시"
+      },
+      {
+        "@type": "Country",
+        "name": "South Korea"
+      }
+    ],
+    "hasOfferingCatalog": {
+      "@type": "OfferingCatalog",
+      "name": "디지털 솔루션 서비스",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "원격검침 시스템 개발",
+            "description": "IoT 기반 실시간 데이터 수집 및 관리 솔루션"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "에너지 모니터링 시스템",
+            "description": "스마트 에너지 관리 및 분석 플랫폼"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "공공기관 시스템 개발",
+            "description": "공공기관 특화 업무관리 및 정보 시스템"
+          }
+        }
+      ]
+    },
+    "keywords": "나주 웹개발, 전남 앱개발, 원격검침 전문업체, 에너지모니터링 시스템, 공공기관 개발 전문, IoT 솔루션"
   };
 
   return (
