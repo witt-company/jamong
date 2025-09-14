@@ -9,11 +9,10 @@ export default function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <Image
           src="/images/hero/hero-background.jpg"
-          alt=""
+          alt="자몽통신 사무실과 개발팀이 작업하는 모습"
           fill
           className="object-cover grayscale object-center lg:object-right"
           priority
-          aria-hidden="true"
         />
         {/* Light overlay for better text readability */}
         <div className="absolute inset-0 bg-black/20"></div>
