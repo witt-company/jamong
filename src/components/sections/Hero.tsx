@@ -29,8 +29,8 @@ export default function Hero() {
             <div className="text-left">
               {/* Main Headline */}
               <h1 className="text-display-2xl font-bold text-white mb-8 leading-[1.15]">
-                <span className="block">맞춤형 솔루션</span>
-                <span className="block text-primary">IT 개발 파트너</span>
+                <span className="block">맞춤형 IT 솔루션</span>
+                <span className="block text-primary">자몽통신</span>
               </h1>
               
               {/* CTA Buttons */}
