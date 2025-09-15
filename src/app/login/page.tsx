@@ -70,7 +70,7 @@ export default function LoginPage() {
           password: data.message
         })
       }
-    } catch (error) {
+    } catch {
       setErrors({
         username: '',
         password: '로그인 중 오류가 발생했습니다.'

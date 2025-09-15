@@ -16,7 +16,7 @@ export default function ButtonSystem() {
               <Button size="sm">Small Primary</Button>
               <Button size="lg">Large Primary</Button>
             </div>
-            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant="default"</code> (기본값)</p>
+            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant=&quot;default&quot;</code> (기본값)</p>
             <p className="text-sm text-gray-700">사용: 메인 CTA, 중요한 액션 버튼</p>
           </div>
 
@@ -27,7 +27,7 @@ export default function ButtonSystem() {
               <Button variant="outline" size="sm">Small Outline</Button>
               <Button variant="outline" size="lg">Large Outline</Button>
             </div>
-            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant="outline"</code></p>
+            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant=&quot;outline&quot;</code></p>
             <p className="text-sm text-gray-700">사용: 보조 액션, 취소 버튼</p>
           </div>
 
@@ -38,7 +38,7 @@ export default function ButtonSystem() {
               <Button variant="secondary" size="sm">Small Secondary</Button>
               <Button variant="secondary" size="lg">Large Secondary</Button>
             </div>
-            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant="secondary"</code></p>
+            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant=&quot;secondary&quot;</code></p>
             <p className="text-sm text-gray-700">사용: 덜 중요한 액션</p>
           </div>
 
@@ -49,7 +49,7 @@ export default function ButtonSystem() {
               <Button variant="ghost" size="sm">Small Ghost</Button>
               <Button variant="ghost" size="lg">Large Ghost</Button>
             </div>
-            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant="ghost"</code></p>
+            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant=&quot;ghost&quot;</code></p>
             <p className="text-sm text-gray-700">사용: 미니멀한 액션, 메뉴 아이템</p>
           </div>
 
@@ -60,7 +60,7 @@ export default function ButtonSystem() {
               <Button variant="link" size="sm">Small Link</Button>
               <Button variant="link" size="lg">Large Link</Button>
             </div>
-            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant="link"</code></p>
+            <p className="text-sm text-gray-600 mb-2">클래스: <code>variant=&quot;link&quot;</code></p>
             <p className="text-sm text-gray-700">사용: 인라인 링크, 로그아웃 등</p>
           </div>
 
