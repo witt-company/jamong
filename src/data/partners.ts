@@ -30,6 +30,26 @@ export const partnersData: Partner[] = [
     logo: "/images/partners/partners_tbit.png",
     width: 162,
   },
+  {
+    name: "TIDE",
+    logo: "/images/partners/partners_tide.png",
+    width: 162,
+  },
+  {
+    name: "songam",
+    logo: "/images/partners/partners_songam.png",
+    width: 162,
+  },
+  {
+    name: "한국정보통신기술협회",
+    logo: "/images/partners/partners_tta.png",
+    width: 162,
+  },
+  {
+    name: "한국스마트그리드사업단",
+    logo: "/images/partners/partners_ksgi.png",
+    width: 162,
+  },
 ];
 
 export const partnersContent = {
