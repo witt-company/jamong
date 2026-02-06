@@ -42,3 +42,12 @@ next-env.d.ts
 
 # claude
 CLAUDE.md
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
