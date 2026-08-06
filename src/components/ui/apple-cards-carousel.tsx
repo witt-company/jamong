@@ -53,14 +53,6 @@ export const Carousel = ({ items, initialScroll = 0, isVisible = false }: Carous
   const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = initialScroll;
-      checkScrollability();
-    }
-  }, [initialScroll]);
-
-
   const checkScrollability = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
@@ -68,6 +60,13 @@ export const Carousel = ({ items, initialScroll = 0, isVisible = false }: Carous
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
     }
   };
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollLeft = initialScroll;
+      checkScrollability();
+    }
+  }, [initialScroll]);
 
   const scrollLeft = () => {
     if (carouselRef.current) {
