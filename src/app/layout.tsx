@@ -58,14 +58,6 @@ export const metadata: Metadata = {
     description: "나주 소재 자몽통신 - 원격검침, 에너지모니터링, 웹앱 개발 전문. 공공기관 맞춤형 디지털 솔루션 제공",
     url: "https://jamong.it.kr",
     siteName: "자몽통신",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "자몽통신 - 디지털 솔루션 개발 전문기업",
-      },
-    ],
     locale: "ko_KR",
     type: "website",
   },
@@ -73,7 +65,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "자몽통신 - 맞춤형 디지털 솔루션 개발 전문기업",
     description: "나주 소재 자몽통신 - 원격검침, 에너지모니터링, 웹앱 개발 전문. 공공기관 맞춤형 디지털 솔루션 제공",
-    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -105,7 +96,7 @@ export default function RootLayout({
     "name": "자몽통신",
     "alternateName": ["Jamong Communications", "자몽", "Jamong"],
     "url": "https://jamong.it.kr",
-    "logo": "https://jamong.it.kr/og-image.png",
+    "logo": "https://jamong.it.kr/opengraph-image",
     "description": "전라남도 나주시 소재 공공기관과 기업 전용 디지털 솔루션 개발 전문기업. 원격검침 시스템, 에너지 모니터링, IoT 솔루션, 모바일 앱, 웹 애플리케이션 개발 전문",
     "foundingDate": "2020",
     "address": {
