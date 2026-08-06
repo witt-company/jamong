@@ -2,7 +2,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 import type { ContactFormData, ContactFormErrors } from '@/types/contact';
-import { EMAIL_CONFIG } from '@/config/emailjs';
+import { EMAIL_CONFIG, isEmailConfigured } from '@/config/emailjs';
 
 export const useContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -40,6 +40,12 @@ export const useContactForm = () => {
       return;
     }
 
+    if (!isEmailConfigured) {
+      console.error('EmailJS 환경변수가 설정되지 않았습니다. .env.example을 참고하세요.');
+      toast.error('메일 전송에 실패했습니다. 다시 시도해주세요.');
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -58,7 +64,11 @@ export const useContactForm = () => {
       setFormData({ name: '', email: '', message: '' });
       setErrors({ name: false, email: false, message: false });
     } catch (error) {
-      console.error('Email send failed:', error);
+      // EmailJS는 { status, text } 형태의 객체를 throw하므로 그대로 찍으면 [object Object]가 됩니다.
+      const { status, text } = (error ?? {}) as { status?: number; text?: string };
+      console.error(
+        `Email send failed: status=${status ?? 'unknown'} text=${text ?? String(error)}`
+      );
       toast.error('메일 전송에 실패했습니다. 다시 시도해주세요.');
     } finally {
       setIsSubmitting(false);

@@ -1,5 +1,9 @@
 export const EMAIL_CONFIG = {
-  SERVICE_ID: 'service_37s1rem',
-  TEMPLATE_ID: 'template_qlgnh8l',
-  PUBLIC_KEY: 'G4xjUv8ClC8S1stbL',
+  SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? '',
+  TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? '',
+  PUBLIC_KEY: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? '',
 } as const;
+
+export const isEmailConfigured = Boolean(
+  EMAIL_CONFIG.SERVICE_ID && EMAIL_CONFIG.TEMPLATE_ID && EMAIL_CONFIG.PUBLIC_KEY
+);
