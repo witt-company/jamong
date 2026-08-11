@@ -109,7 +109,6 @@ export default function RootLayout({
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+82-10-6850-7890",
       "contactType": "customer service",
       "availableLanguage": "Korean",
       "areaServed": "전라남도"

@@ -18,9 +18,9 @@ export default function Footer() {
               공공기관 특화 IT 솔루션 개발 전문 기업입니다.
             </p>
             <div className="flex space-x-4">
-              <button 
+              <button
                 onClick={() => handleSocialClick('블로그')}
-                className="text-gray-300 hover:text-primary transition-colors cursor-pointer" 
+                className="text-gray-300 hover:text-primary transition-colors cursor-pointer"
                 aria-label="블로그로 이동"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
@@ -29,18 +29,18 @@ export default function Footer() {
                   <circle cx="5" cy="19" r="1"/>
                 </svg>
               </button>
-              <button 
+              <button
                 onClick={() => handleSocialClick('유튜브')}
-                className="text-gray-300 hover:text-primary transition-colors cursor-pointer" 
+                className="text-gray-300 hover:text-primary transition-colors cursor-pointer"
                 aria-label="유튜브로 이동"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
               </button>
-              <button 
+              <button
                 onClick={() => handleSocialClick('인스타그램')}
-                className="text-gray-300 hover:text-primary transition-colors cursor-pointer" 
+                className="text-gray-300 hover:text-primary transition-colors cursor-pointer"
                 aria-label="인스타그램으로 이동"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
@@ -68,8 +68,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">연락처</h3>
             <ul className="space-y-2 text-gray-300">
               <li>전라남도 나주시 빛가람동 그린로 370, 4층 414호</li>
-              <li>이메일: ceo@jamong.it.kr</li>
-              <li>전화: 010-6850-7890</li>
+              <li>이메일: jamongceo@gmail.com</li>
             </ul>
           </div>
         </div>
