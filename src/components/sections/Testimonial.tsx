@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Testimonial() {
   return (
     <section id="about" className="section-padding section-padding-connected-bottom bg-gray-50">
@@ -14,19 +12,6 @@ export default function Testimonial() {
             <p>실제 현장에서 작동하는 &lsquo;현실적인 해결책&rsquo;을 필요로 합니다.</p>
             <p>자몽은 고객의 업무 환경을 깊이 이해하고,</p>
             <p>그에 맞는 맞춤형 시스템을 제안하고 구축해드립니다.</p>
-          </div>
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 mb-4 relative overflow-hidden rounded-full">
-              <Image
-                src="/images/testimonials/ceo-avatar.jpg"
-                alt="KKY"
-                fill
-                className="object-cover"
-                sizes="64px"
-              />
-            </div>
-            <p className="font-semibold text-gray-900">KKY</p>
-            <p className="text-sm text-gray-600">자몽대표</p>
           </div>
         </div>
       </div>
